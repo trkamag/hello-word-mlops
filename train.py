@@ -9,13 +9,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 import mlflow
 import mlflow.sklearn
+import time
 
 def parse_args():
     p = argparse.ArgumentParser("Simple MLflow demo (wine prediction)")
     p.add_argument("--csv", default="data/wine-sample.csv", help="Path to CSV (default: data/wine_sample.csv)")
     p.add_argument("--target", default="quality", help="Target column name (default: quality)")
     p.add_argument("--experiment", default="wine-prediction-tka", help="MLflow experiment name")
-    p.add_argument("--run", default="run-2", help="MLflow run name")
+    p.add_argument("--run", default=f"run-{int(time.time())}", help="MLflow run name")
     p.add_argument("--n-estimators", type=int, default=50, help="RandomForest n_estimators (default: 50)")
     p.add_argument("--max-depth", type=int, default=5, help="RandomForest max_depth (default: 5)")
     p.add_argument("--test-size", type=float, default=0.2, help="Test split fraction (default: 0.3)")
