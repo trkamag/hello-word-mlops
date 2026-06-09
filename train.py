@@ -75,6 +75,14 @@ def main():
         mlflow.log_metric("mse", float(mse))
         mlflow.log_metric("rmse", rmse)
         mlflow.log_metric("r2", r2)
+        
+        # Log and register model in one step - Added by thierry K
+        mlflow.sklearn.log_model(
+            sk_model=model,
+            artifact_path="model",
+            registered_model_name="my-first-model",  # ← This registers the model
+            input_example=X_train
+    )
 
 if __name__ == "__main__":
     main()
