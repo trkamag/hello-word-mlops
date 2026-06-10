@@ -4,6 +4,11 @@ __pycache__/
 build/
 dist/
 wheels/
+*.db
+*.toml
+*.lock
+*.python-version
+mlartifacts/
 *.egg-info
 
 # Virtual environments
