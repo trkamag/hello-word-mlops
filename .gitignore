@@ -9,6 +9,7 @@ wheels/
 *.lock
 *.python-version
 mlartifacts/
+*.toto
 *.egg-info
 
 # Virtual environments
